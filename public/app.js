@@ -28,7 +28,7 @@ function cart_get_number_of_items()
 		for(var i = 0; i < window.localStorage.length; i++)
 		{
 			var key = window.localStorage.key(i);				//получаем ключ хеша
-			var value = window.localStorage.getItem(key);		//получаем значение хеша по ключу
+			var value = window.localStorage.getItem(key);		//получаем значение по ключу хеша 
 
 			if (key.indexOf('product_') == 0)
 			{
