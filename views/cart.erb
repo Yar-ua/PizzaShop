@@ -1,0 +1,28 @@
+<p2>Список заказанных продуктов</p2>
+<br/>
+<br/>
+
+<% summ = 0 %>
+<% quantity = 0 %>
+<table class="table table-bordered">
+<tr class="active">
+	<td>Наименование</td>
+	<td>Кол-во</td>
+	<td>Стоимость</td>
+</tr>
+	<% @items.each do |item| %>
+		<tr>
+			<td><%= item[0].title %></td>
+			<td><%= item[1] %><% quantity = quantity + item[1].to_i %></td>
+			<td><%= item[0].price %><% summ = summ + item[1].to_i * item[0].price.to_i %></td>
+		</tr>
+	<% end %>
+
+<tr class="success">
+	<td>ИТОГО</td>
+	<td><%= quantity %></td>
+	<td><%= summ %></td>
+</tr>	
+
+</table>
+
