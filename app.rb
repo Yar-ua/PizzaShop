@@ -20,13 +20,15 @@ get '/about' do
 end
 
 post "/cart" do
-	orders_input = params[:orders]
+	@orders_input = params[:orders]
 	@products = Product.all
-	@items = parse_orders_input orders_input
+	@items = parse_orders_input @orders_input
 		#id, cnt
 	@items.each do |item|
 		item[0] = Product.find(item[0])
 	end
+
+
 erb :cart
 end
 
