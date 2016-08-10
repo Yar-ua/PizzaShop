@@ -9,6 +9,9 @@ set :database, "sqlite3:pizzashop.db"
 class Product < ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+end
+
 get '/' do
 	@products = Product.all
 
@@ -28,8 +31,13 @@ post "/cart" do
 		item[0] = Product.find(item[0])
 	end
 
-
 erb :cart
+end
+
+
+post '/place_order' do
+	@order = Order.create params[:order]
+	erb "Thanks, you order has been placed"
 end
 
 
