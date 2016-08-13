@@ -45,6 +45,13 @@ post '/place_order' do
 	erb :order_placed
 end
 
+get '/admin' do
+	
+	erb :admin
+end
+
+
+
 
 def parse_orders_input orders_input
 	s1 = orders_input.split(/,/)
