@@ -46,7 +46,7 @@ post '/place_order' do
 end
 
 get '/admin' do
-	
+	@orders = Order.order(created_at: :desc)
 	erb :admin
 end
 

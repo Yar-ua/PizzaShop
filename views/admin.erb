@@ -1,0 +1,19 @@
+<h2>Added orders</h2>
+<br/>
+
+	<table class="table table-bordered">
+	<tr class="active">
+		<td>Наименование</td>
+		<td>Кол-во</td>
+		<td>Стоимость</td>
+		<td>Адрес</td>
+	</tr>
+		<% @orders.each do |order| %>
+			<tr>
+				<td><%= order.orders_input %></td>
+				<td><%= order.name %></td>
+				<td><%= order.phone %></td>
+				<td><%= order.adress %></td>
+			</tr>
+		<% end %>
+	</table>
